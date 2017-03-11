@@ -9,10 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var bgImage: UIImageView!
+    @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var goodbyeBtn: UIButton!
+    @IBOutlet weak var welcomeBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        bgImage.isHidden = true
+        logoImage.isHidden = true
+        goodbyeBtn.isHidden = true
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +28,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func welcomeBtnPressed(_ sender: Any) {
+        bgImage.isHidden = false
+        logoImage.isHidden = false
+        goodbyeBtn.isHidden = false
+        welcomeBtn.isHidden = true
+    }
+   
+    @IBAction func goodbyeBtnPressed(_ sender: Any) {
+        bgImage.isHidden = true
+        logoImage.isHidden = true
+        goodbyeBtn.isHidden = true
+        welcomeBtn.isHidden = false
+    }
+    
 
 }
 
